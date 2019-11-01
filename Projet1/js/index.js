@@ -195,9 +195,6 @@ function verifBouton()
     }
     else 
     {
-        //cookie
+       //cookie 
     }
 }
-
-
- 
