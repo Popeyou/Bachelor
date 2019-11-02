@@ -1,0 +1,28 @@
+.cookie
+{
+    position:fixed;
+    z-index:130;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    height:20px;
+    padding:5px;
+    background-color:#DC143C;
+    overflow:hidden;
+    background:rgba(43,43,43,.7);
+    color:#fff;
+    text-align:left;
+    font-family:Calibri;
+    font-size:13px;
+    visibility:visible;
+}
+
+.bouton_cookie
+{
+    background-color:#DC1010;
+    color:#fff;
+    float:right;
+    height: 20px;
+    width:Calibri;
+    font-size:13px;
+}

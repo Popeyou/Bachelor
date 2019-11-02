@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/mef.css">
 </head>
 <body>
 
     <script src="https://kit.fontawesome.com/c0c75a99fb.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <script src="js/cookies.js"></script>
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -64,13 +66,37 @@
             </center>
         </fieldset>
     </form>
+
+    
     
     <br><br><br>
 
     <center><p class="text-danger" style = "font-size:16px;" id="err"></p></center>
 
+    <script type="text/javascript" language="javascript">
+
+    if(recupererCookie("valeurCookie")=="oui")//voir si la personne à deja accepeter les cookies sinon voir le bandeau
+    {
+        document.getDocumentById("bandeau").style.visibility="hidden";
+    }else{
+        document.getDocumentById("bandeau").style.visibility="visible";
+    }
+
+        var nom = document.getElementById('nom');
+        var prenom = document.getElementById('prenom');
+        var civilite = document.getElementById('civilite');
+        
+        creerCookie("nom",nom,"15");
+        creerCookie("prenom",prenom,"15");
+        creerCookie("civilite",civilite,"15");
+    
+    </script>
 
 </div>
-</div>          
+</div>   
+<div class="cookie" id="bandeau">
+        <button class="bouton_cookie" type="button" id="ok" onClick="Javascript:document.getDocumentById('bandeau').style.visibility='hidden';creerCookie('valeurCookie','oui','15');">Ok</button>
+        Ce site utilise les cookies pour améliorer votre expérience de naviguation.
+    </div>       
 </body>
 </html>
