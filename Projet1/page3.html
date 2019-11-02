@@ -26,18 +26,8 @@
       <div class="form-group">
           <label for="exampleInputEmail1"></label>
           <p>Quelle a été la date de votre arrivée ?</p>
-          <input type="text" class="form-control" id="datea" aria-describedby="emailHelp" placeholder="date" data-kwimpalastatus="alive" data-kwimpalaid="1572535795331-4">
-          <small id="emailHelp" class="form-text text-muted">Format date jj/mm/aaaa</small>
-        <span style="opacity: 1; left: 518px; top: 141.5px; width: 19px; min-width: 19px; height: 13px; position: absolute;
-        background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d
-          3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTcnIGhlaWdodD0nMTInIHZpZXdCb3g9JzAgMCAxNyAxMic+IDxkZWZzPiA8cGF0aCBpZD0nYScgZD0nTTcuOTA5IDEuNDYybDIuMTIxLjg2N
-          HMtLjY3MS4xMy0xLjIwOS4yOTRjMCAwIC40MzcuNjM0Ljc3LjkzOC4zOTEtLjE4LjY1Ny0uMjQ4LjY1Ny0uMjQ4LS44MTEgMS42NjgtMi45NzkgMi43MDMtNC41MyAyLjcwMy0uMDkzIDAtLjQ4Mi0uMD
-          A2LS43MjcuMDE1LS40MzUuMDIxLS41ODEuMzgtLjM3NC40NzMuMzczLjIwMSAxLjE0My42NjIuOTU4IDEuMDA5QzUuMiA4LjAwMy45OTkgMTEgLjk5OSAxMWwuNjQ4Ljg4Nkw2LjEyOSA4LjYzQzguNjAyID
-          YuOTQ4IDEyLjAwNiA2IDE1IDZoM1Y1aC00LjAwMWMtMS4wNTggMC0yLjA0LjEyMi0yLjQ3My0uMDItLjQwMi0uMTMzLS41MDItLjY3OS0uNDU1LTEuMDM1YTcuODcgNy44NyAwIDAgMSAuMTg3LS43MjljLjAyOC
-          0uMDk5LjA0Ni0uMDc3LjE1NS0uMDk5LjU0LS4xMTIuNzc3LS4wOTUuODIxLS4xNi4xNDYtLjI0NS4yNTQtLjk3NC4yNTQtLjk3NEw3LjU2OS4zODlzLjIwMiAxLjAxMy4zNCAxLjA3M3onLz4gPC9kZWZzPiA8dXNlIGZ
-          pbGw9JyMwMDdDOTcnIGZpbGwtcnVsZT0nZXZlbm9kZCcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoLTEpJyB4bGluazpocmVmPScjYScvPiA8L3N2Zz4=&quot;); 
-          background-repeat: no-repeat; background-position: 0px 0px; border: none; display: inline; visibility: visible; z-index: auto;">
-          </span>
+          <input type="text" class="form-control" id="datea" aria-describedby="emailHelp" placeholder="date" data-kwimpalastatus="alive" data-kwimpalaid="1572535795331-4" onfocusout="verifDate()">
+          <small id="err"></small>
         </div>
     </form>
 
@@ -80,9 +70,10 @@
         </form>
 
     
-    <br><br><br>
+        <br><br><br><br><br><br><br>
 
     <div>
+        <form style="width: 80%; margin-right: auto; margin-left: auto;">
         <ul class="pagination pagination-lg">
           <li class="page-item">
             <a class="page-link" href="page2.html">&laquo;</a>
@@ -103,6 +94,7 @@
             <a class="page-link" href="page4.html">&raquo;</a>
           </li>
         </ul>
+      </form>
       </div> 
 </div>
 </div>          
