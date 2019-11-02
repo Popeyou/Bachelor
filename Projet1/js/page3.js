@@ -2,7 +2,7 @@ var dateVerifie = 0;
 
 function verifDate() //verif de la date dans le bon format
 {
-    var datea = document.getElementById('datea').value; //date en variable
+    var chaine = document.getElementById('datea').value; //date en variable
     var regdate = "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"; //regex de la date
 
     var a = document.getElementById("err");
