@@ -7,7 +7,7 @@ var dateNaissVerifie = 0;
 function normaliserNom () //Vérification nom
 {   
     var chaine = document.getElementById('nom').value; //on affecte la variable chaine au champs nom dans le form html
-    var reg = "^[a-zA-Z-éèâêà]{0,100}$"; //Minuscules et majuscules autorisés, é , è , â autorisés
+    var reg = "^[a-zA-Z-éèâêà]{0,50}$"; //Minuscules et majuscules autorisés, é , è , â autorisés
 
     var a = document.getElementById("messageErr");
 
@@ -25,6 +25,8 @@ function normaliserNom () //Vérification nom
         a.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         nomVerifie = 1; //variable globale
+
+        document.cookie = "nom="+document.getElementById('nom').value;
     }
     else //sinon
     {
@@ -72,6 +74,8 @@ function normaliserPrenom () //Vérification prénom (même chose que pour nom, 
         b.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         prenomVerifie = 1; //variable globale
+
+        document.cookie = "prenom="+document.getElementById('prenom').value;
     }
     else
     {
@@ -125,6 +129,8 @@ function verifEmail() //Fonction verif mail vue en cours
         c.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         mailVerifie = 1; //variable globale
+
+        document.cookie = "email="+document.getElementById('email').value;
     }
     else if (mail == "")
     {
@@ -166,6 +172,8 @@ function dateVerif() //Fonction de vérification de date en utilisant un regex
         d.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         dateNaissVerifie = 1; //variable globale
+
+        document.cookie = "dateNaiss="+document.getElementById('dateNaiss').value;
     }
     else 
     {
@@ -193,8 +201,9 @@ function verifBouton()
     {
         e.innerHTML = "<i class='fas fa-times'></i> &nbsp; Vous n'avez pas respecté tous les formats !";
     }
-    else 
+    else if (dateNaissVerifie == 1 || mailVerifie == 1 || nomVerifie == 1 || prenomVerifie == 1)
     {
-       //cookie 
+        document.cookie = "civilite="+document.getElementById('civilite').value;
+        document.location.href="page1.html";
     }
 }
