@@ -1,2 +1,4 @@
-var x = document.cookie;
-document.write(x);
+function verifButton ()
+{
+    document.location.href="page2.html";
+}

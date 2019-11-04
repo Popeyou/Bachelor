@@ -46,8 +46,15 @@
               <option>Voiture</option>
               <option>Autre</option>
             </select>
-          </div>
-      </form>
+          </div><br><br>
+    </form>
+
+    <form style="width: 80%; margin-right: auto; margin-left: auto;"> 
+      <p>Sur une échelle de 1 à 10 comment avez-vous trouvez la facilité d'accès à la location ?</p>
+      <br>
+      <input type="range" name="accesInput" min="0" max="10" step="1" value="5" class="custom-range" id="accesInput" oninput="accesOutput.value = accesInput.value">
+      <center><output name="accesOutput" id="accesOutput">5</output></center>  
+    </form>
     
       <br><br><br><br><br><br><br>
 

@@ -25,8 +25,6 @@ function normaliserNom () //Vérification nom
         a.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         nomVerifie = 1; //variable globale
-
-        document.cookie = "nom="+document.getElementById('nom').value;
     }
     else //sinon
     {
@@ -74,8 +72,6 @@ function normaliserPrenom () //Vérification prénom (même chose que pour nom, 
         b.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         prenomVerifie = 1; //variable globale
-
-        document.cookie = "prenom="+document.getElementById('prenom').value;
     }
     else
     {
@@ -129,8 +125,6 @@ function verifEmail() //Fonction verif mail vue en cours
         c.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         mailVerifie = 1; //variable globale
-
-        document.cookie = "email="+document.getElementById('email').value;
     }
     else if (mail == "")
     {
@@ -172,8 +166,6 @@ function dateVerif() //Fonction de vérification de date en utilisant un regex
         d.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
         dateNaissVerifie = 1; //variable globale
-
-        document.cookie = "dateNaiss="+document.getElementById('dateNaiss').value;
     }
     else 
     {
@@ -203,7 +195,6 @@ function verifBouton()
     }
     else if (dateNaissVerifie == 1 || mailVerifie == 1 || nomVerifie == 1 || prenomVerifie == 1)
     {
-        document.cookie = "civilite="+document.getElementById('civilite').value;
         document.location.href="page1.html";
     }
 }

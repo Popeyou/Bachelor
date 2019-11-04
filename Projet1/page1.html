@@ -10,6 +10,7 @@
 <body>
 
     <script src="js/page1.js"></script>
+    <script src="js/cookies.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -19,6 +20,7 @@
           
             <div class="collapse navbar-collapse" id="navbarColor02">
     </nav>
+
 <div class="container" style="margin-right: auto; margin-left: auto;">
     <div class="col">
     <br>
@@ -26,15 +28,15 @@
     
       <p>Qu'avez vous penser de votre location ?</p>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="radio1" value="option1" checked>
+        <input class="form-check-input" type="radio" name="radio10" id="radio1" value="10">
         <label class="form-check-label" for="radio1">
           Très satisfait
         </label><br>
-        <input class="form-check-input" type="radio" name="exampleRadios" id="radio2" value="option2" checked>
+        <input class="form-check-input" type="radio" name="radio10" id="radio2" value="5" checked>
         <label class="form-check-label" for="radio2">
           Satisfait
         </label><br>
-        <input class="form-check-input" type="radio" name="exampleRadios" id="radio3" value="option3" checked>
+        <input class="form-check-input" type="radio" name="radio10" id="radio3" value="1">
         <label class="form-check-label" for="radio3">
           Peu satisfait
         </label><br><br><br>
@@ -44,15 +46,15 @@
     <form style="width: 80%; margin-right: auto; margin-left: auto;">
       <p>Recommanderiez-vous la location ?</p>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="radio4" value="option4" checked>
+        <input class="form-check-input" type="radio" name="radio20" id="radio4" value="10">
         <label class="form-check-label" for="radio4">
           Oui
         </label><br>
-        <input class="form-check-input" type="radio" name="exampleRadios" id="radio5" value="option5" checked>
+        <input class="form-check-input" type="radio" name="radio20" id="radio5" value="1" checked>
         <label class="form-check-label" for="radio5">
           Non
         </label><br>
-        <input class="form-check-input" type="radio" name="exampleRadios" id="radio6" value="option6" checked>
+        <input class="form-check-input" type="radio" name="radio20" id="radio6" value="5">
         <label class="form-check-label" for="radio6">
           Ne se prononce pas
         </label>
@@ -69,7 +71,7 @@
             <a class="page-link">&laquo;</a>
           </li>
           <li class="page-item active">
-            <a class="page-link" href="page1.html">1</a>
+            <button type="button" class="page-link">1</button>
           </li>
           <li class="page-item disabled">
             <a class="page-link">2</a>
@@ -81,11 +83,21 @@
             <a class="page-link">4</a>
           </li>
           <li class="page-item">
-            <a class="page-link" href="page2.html">&raquo;</a>
+            <button type="button" class="page-link" onclick="verifButton()">&raquo;</button>
           </li>
         </ul>
       </form>
-      </div> 
+    </div>
+    
+    <script type="text/javascript" language="javascript">
+
+      var radio10 = document.getElementByName('radio10');
+      var radio20 = document.getElementByName('radio20');
+        
+      creerCookie("radio10",radio10,"15");
+      creerCookie("radio20",radio20,"15");
+    
+    </script>
 </div>
 </div>          
 </body>
