@@ -10,6 +10,7 @@
 <body>
 
     <script src="js/page4.js"></script>
+    <script src="js/cookies.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -26,7 +27,8 @@
         <div class="form-group">
           <p>Auriez vous un commentaire à nous faire pavenir à propos de la location ?</p>
             <label for="exampleTextarea">Votre commentaire : </label>
-            <textarea class="form-control" id="txt255" rows="5" onkeyup="txt255()"></textarea>
+            <textarea class="form-control" id="txt255" rows="5" onkeydown="txt()" onkeyup="txt()"></textarea>
+            <small id="messageErr6"></small>
           </div>
         </form>
 
@@ -52,7 +54,7 @@
             <a class="page-link" href="page4.html">4</a>
           </li>
           <li class="page-item">
-            <a class="page-link" href="fin.html">&raquo;</a>
+            <button type="button" id="btn1" onclick="pageSuivante()" class="page-link">&raquo;</button>
           </li>
         </ul>
       </form>
