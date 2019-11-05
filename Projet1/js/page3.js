@@ -1,5 +1,6 @@
 var dateVerifie = 0; 
-
+var x = document.cookie;
+document.write(x);
 function verifDate() //verif de la date dans le bon format
 {
     var chaine = document.getElementById('datea').value; //date en variable
