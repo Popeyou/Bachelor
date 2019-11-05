@@ -16,7 +16,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <img src="doc/logo.png" class="navbar-brand" href="#" style="width: 12%;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -78,15 +78,17 @@
     if(recupererCookie("valeurCookie")=="oui")//voir si la personne à deja accepeter les cookies sinon voir le bandeau
     {
         document.getDocumentById("bandeau").style.visibility="hidden";
-    }else{
+    }
+    else
+    {
         document.getDocumentById("bandeau").style.visibility="visible";
     }
     </script>
 
 </div>
 </div>   
-<div class="cookie" id="bandeau">
-        <button class="bouton_cookie" type="button" id="ok" onClick="Javascript:document.getDocumentById('bandeau').style.visibility='hidden';creerCookie('valeurCookie','oui','15');">Ok</button>
+<div class="cookie" id="bandeau" style="">
+        <button class="bouton_cookie" type="button" id="ok" onClick="Javascript:document.getDocumentById('bandeau').style.visibility='hidden';creerCookie('valeurCookie','oui','15');deleteBandeau()">Ok</button>
         Ce site utilise les cookies pour améliorer votre expérience de naviguation.
 </div>       
 </body>
