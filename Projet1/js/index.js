@@ -195,6 +195,18 @@ function verifBouton()
     }
     else if (dateNaissVerifie == 1 || mailVerifie == 1 || nomVerifie == 1 || prenomVerifie == 1)
     {
+        var nom = document.getElementById('nom').value;
+        var prenom = document.getElementById('prenom').value;
+        var mail = document.getElementById('email').value;
+        var dateNaiss = document.getElementById('dateNaiss').value;
+        var civilite = document.getElementById('civilite').value;
+        
+        creerCookie("nom",nom,"15");
+        creerCookie("email",mail,"15");
+        creerCookie("dateNaiss",dateNaiss,"15");
+        creerCookie("prenom",prenom,"15");
+        creerCookie("civilite",civilite,"15");
+
         document.location.href="page1.html";
     }
 }
