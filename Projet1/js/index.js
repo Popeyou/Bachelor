@@ -98,6 +98,12 @@ function normaliserPrenom () //Vérification prénom (même chose que pour nom, 
     }
 }
 
+function bandeau ()
+{
+    var bande = document.getElementById('bandeau');
+    document.getElementById('bandeau').style.display = 'none';
+}
+
 function verifEmail() //Fonction verif mail vue en cours
 {
     var mail = document.getElementById('email').value;

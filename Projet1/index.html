@@ -74,21 +74,12 @@
     <center><p class="text-danger" style = "font-size:16px;" id="err"></p></center>
 
     <script type="text/javascript" language="javascript">
-
-    if(recupererCookie("valeurCookie")=="oui")//voir si la personne à deja accepeter les cookies sinon voir le bandeau
-    {
-        document.getDocumentById("bandeau").style.visibility="hidden";
-    }
-    else
-    {
-        document.getDocumentById("bandeau").style.visibility="visible";
-    }
     </script>
 
 </div>
 </div>   
-<div class="cookie" id="bandeau" style="">
-        <button class="bouton_cookie" type="button" id="ok" onClick="Javascript:document.getDocumentById('bandeau').style.visibility='hidden';creerCookie('valeurCookie','oui','15');deleteBandeau()">Ok</button>
+<div class="cookie" id="bandeau">
+        <button class="bouton_cookie" type="button" id="ok" onClick="bandeau()">Ok</button>
         &nbsp; &nbsp; Ce site utilise les cookies pour améliorer votre expérience de naviguation.
 </div>       
 </body>
