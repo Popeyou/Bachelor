@@ -1,6 +1,7 @@
-var dateVerifie = 0; 
-var x = document.cookie;
-document.write(x);
+var dateVerifie = 0;
+var nbVerifie = 0;
+var urlVerifie;
+
 function verifDate() //verif de la date dans le bon format
 {
     var chaine = document.getElementById('datea').value; //date en variable
@@ -30,7 +31,7 @@ function verifDate() //verif de la date dans le bon format
         document.getElementById("err").style.color = "red";
         a.innerHTML = "Le format est invalide &nbsp; <i class='fas fa-times'></i>";
 
-        nomVerifie = 0; //variable globale
+        dateVerifie = 0; //variable globale
     }
 
     if (chaine == "") //Si le champs est vide
@@ -42,7 +43,7 @@ function verifDate() //verif de la date dans le bon format
         document.getElementById("err").style.color = "red";
         a.innerHTML = "Le format est invalide &nbsp; <i class='fas fa-times'></i>";
 
-        nomVerifie = 0; //variable globale
+        dateVerifie = 0; //variable globale
     }
 }
 
@@ -65,7 +66,7 @@ function verifNbj()
         document.getElementById("err2").style.color = "green";
         a.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
-        dateVerifie = 1; //variable globale
+        nbVerifie = 1; //variable globale
     }
     else //sinon
     {
@@ -76,7 +77,7 @@ function verifNbj()
         document.getElementById("err2").style.color = "red";
         a.innerHTML = "Le format est invalide &nbsp; <i class='fas fa-times'></i>";
 
-        nomVerifie = 0; //variable globale
+        nbVerifie = 0; //variable globale
     }
 
     if (chaine == "") //Si le champs est vide
@@ -88,7 +89,7 @@ function verifNbj()
         document.getElementById("err2").style.color = "red";
         a.innerHTML = "Insérez un nombre &nbsp; <i class='fas fa-times'></i>";
 
-        nomVerifie = 0; //variable globale
+        nbVerifie = 0; //variable globale
     }
 }
 
@@ -111,7 +112,7 @@ function verifUrl()
         document.getElementById("err3").style.color = "green";
         a.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
-        dateVerifie = 1; //variable globale
+        urlVerifie = 1; //variable globale
     }
     else //sinon
     {
@@ -122,7 +123,7 @@ function verifUrl()
         document.getElementById("err3").style.color = "red";
         a.innerHTML = "Le format est invalide &nbsp; <i class='fas fa-times'></i>";
 
-        nomVerifie = 0; //variable globale
+        urlVerifie = 0; //variable globale
     }
 
     if (chaine == "") //Si le champs est vide
@@ -134,6 +135,6 @@ function verifUrl()
         document.getElementById("err3").style.color = "red";
         a.innerHTML = "Le format est invalide &nbsp; <i class='fas fa-times'></i>";
 
-        nomVerifie = 0; //variable globale
+        urlVerifie = 0; //variable globale
     }
 }
