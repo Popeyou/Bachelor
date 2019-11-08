@@ -7,7 +7,7 @@ var dateNaissVerifie = 0;
 function normaliserNom () //Vérification nom
 {   
     var chaine = document.getElementById('nom').value; //on affecte la variable chaine au champs nom dans le form html
-    var reg = "^[a-zA-Z-éèâêà]{0,50}$"; //Minuscules et majuscules autorisés, é , è , â autorisés
+    var reg = "^[a-zA-ZéâêèîôçÉÊÈÇÂÎÔ]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"; //Minuscules et majuscules autorisés, é , è , â, - et espaces autorisés
 
     var a = document.getElementById("messageErr");
 
@@ -54,7 +54,7 @@ function normaliserNom () //Vérification nom
 function normaliserPrenom () //Vérification prénom (même chose que pour nom, on met seulement la première lettre en majuscule ici *)
 {   
     var pre = document.getElementById('prenom').value;
-    var regex = "^[a-zA-Z-éèâêà]{0,100}$";
+    var regex = "^[a-zA-ZéâêèîôçÉÊÈÇÂÎÔ]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"; //Minuscules et majuscules autorisés, é , è , â, - et espaces autorisés
 
     var b = document.getElementById("messageErr2");
 

@@ -2,14 +2,53 @@ var dateVerifie = 0;
 var nbVerifie = 0;
 var urlVerifie;
 
+
 function verifDate() //verif de la date dans le bon format
 {
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    var vrai = 0;
+
+
+    today = dd + '/' + mm + '/' + yyyy;
+    
     var chaine = document.getElementById('datea').value; //date en variable
     var regdate = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g; //regex de la date
 
+    var ddChaine = chaine.substr(0,2);
+    var mmChaine = chaine.substr(3,2);
+    var aaaaChaine = chaine.substr(6,4);
+
+    if (yyyy == aaaaChaine)
+    {
+        if (mmChaine == mm)
+        {
+            if (ddChaine >= dd)
+            {
+                vrai = 0;
+            }
+        }
+        else if (mmChaine > mm)
+        {
+            vrai = 0;
+        }
+    }
+    else if (aaaaChaine > yyyy)
+    {
+        vrai = 0;
+    }
+    else
+    {
+        vrai = 1;
+    }
+
     var a = document.getElementById("err");
 
-    if (chaine.match(regdate)) //Si il n'y a que jj/mm/aaaa
+    if (chaine.match(regdate) && vrai == 1) //Si il n'y a que jj/mm/aaaa
     {
         document.getElementById('datea').value = chaine;
 
@@ -55,7 +94,7 @@ function verifNbj()
 
     var a = document.getElementById("err2");
 
-    if (chaine.match(regdate) && chaine < 31 ) //Si il n'y a que jj/mm/aaaa
+    if (chaine.match(regdate) && chaine < 31 && chaine > 0) //Si il n'y a que jj/mm/aaaa
     {
         document.getElementById('nbj').value = chaine;
 
