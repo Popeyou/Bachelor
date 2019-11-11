@@ -11,19 +11,30 @@ function verifDate() //verif de la date dans le bon format
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
 
-    var vrai = 0;
-
+    var vrai = 1;
 
     today = dd + '/' + mm + '/' + yyyy;
     
     var chaine = document.getElementById('datea').value; //date en variable
     var regdate = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g; //regex de la date
 
+    
     var ddChaine = chaine.substr(0,2);
     var mmChaine = chaine.substr(3,2);
     var aaaaChaine = chaine.substr(6,4);
 
-    if (yyyy == aaaaChaine)
+    /*
+    var nbf = 0;
+
+    var verif = 1;
+
+    var j = parseInt(ddChaine);
+    var m = parseInt(mmChaine);
+    var a = parseInt(aaaaChaine);
+    */
+
+    /*  Verif de la inferieur à celle du jours  */
+    if (aaaaChaine == yyyy)
     {
         if (mmChaine == mm)
         {
@@ -45,6 +56,54 @@ function verifDate() //verif de la date dans le bon format
     {
         vrai = 1;
     }
+
+    /*  Verif de la date genre fevrier  */
+    /*
+    if (a%4 ==0 && a %100 !=0 || a%400==0)
+    {
+        nbf = 29;
+    }
+    else 
+    {
+        nbf=28;
+    }
+    switch(m)
+    {
+        case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 : 
+        if (j<0 || j>31)
+            {
+                verif = 0;
+            }
+            else 
+            {
+                verif = 1;
+            }
+            break;
+        case 4 : case 6 : case 9 : case 11  :
+            if (j<0 || j>30)
+                {
+                    verif = 0;
+                }
+                else
+                {
+                    verif = 1;
+                }
+        case 2 : 
+            if(j<0 || j>nbf)
+                {
+                    verif = 0;
+                }
+                else 
+                {
+                    verif = 1;
+                }
+                break;
+
+                default : verif = 0;
+                break;
+                
+    }
+    */
 
     var a = document.getElementById("err");
 
