@@ -158,11 +158,51 @@ function verifEmail() //Fonction verif mail vue en cours
 
 function dateVerif() //Fonction de vérification de date en utilisant un regex
 {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    var vrai = 1;
+
+    today = dd + '/' + mm + '/' + yyyy;
+
     var dateN = document.getElementById('dateNaiss').value;
     var d = document.getElementById("messageErr4");
 
-    var reg = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
-    if (dateN.match(reg)) 
+    var ddChaine = dateN.substr(0,2);
+    var mmChaine = dateN.substr(3,2);
+    var aaaaChaine = dateN.substr(6,4);
+
+    
+
+    var reg = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g; //regex de la date
+
+
+    if (aaaaChaine == yyyy)
+    {
+        if (mmChaine == mm)
+        {
+            if (ddChaine >= dd)
+            {
+                vrai = 0;
+            }
+        }
+        else if (mmChaine > mm)
+        {
+            vrai = 0;
+        }
+    }
+    else if (aaaaChaine > yyyy)
+    {
+        vrai = 0;
+    }
+    else
+    {
+        vrai = 1;
+    }
+
+    if (dateN.match(reg) && vrai == 1) 
     {
         document.getElementById('dateNaiss').style.borderWidth = "3px";
         document.getElementById('dateNaiss').style.borderColor = "green";

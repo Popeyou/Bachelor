@@ -1,6 +1,6 @@
 var dateVerifie = 0;
 var nbVerifie = 0;
-var urlVerifie;
+var urlVerifie = 0;
 
 
 function verifDate() //verif de la date dans le bon format
@@ -236,3 +236,23 @@ function verifUrl()
         urlVerifie = 0; //variable globale
     }
 }
+
+function verifBouton()
+{
+    var e = document.getElementById("error");
+
+    if (document.getElementById('url').value == "" || document.getElementById('nbj').value == "" || document.getElementById('datea').value == "") //Si un champs ou plus est vide
+    {
+        e.innerHTML = "<i class='fas fa-times'></i> &nbsp; Un des champs est vide !";
+    }
+    else if (dateVerifie == 0 || nbVerifie == 0 || urlVerifie == 0) //On check si une variable globale est à 0
+    {
+        e.innerHTML = "<i class='fas fa-times'></i> &nbsp; Vous n'avez pas respecté tous les formats !";
+    }
+    else if (dateVerifie == 1 || nbVerifie == 1 || urlVerifie == 1)
+    {
+        document.location.href="page4.html";
+    }
+}
+
+
