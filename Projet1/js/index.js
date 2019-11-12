@@ -4,6 +4,7 @@ var prenomVerifie = 0;
 var mailVerifie = 0;
 var dateNaissVerifie = 0;
 
+
 function normaliserNom () //Vérification nom
 {   
     var chaine = document.getElementById('nom').value; //on affecte la variable chaine au champs nom dans le form html
@@ -60,18 +61,51 @@ function normaliserPrenom () //Vérification prénom (même chose que pour nom, 
 
     if (pre.match(regex))
     {
-        pre = pre.charAt(0).toUpperCase() + pre.substring(1).toLowerCase(); // *
+        var parties = pre.split('-', 2);
+        var partiesEspace = pre.split(' ', 2);
 
-        document.getElementById('prenom').value = pre;
+        if (pre.includes("-"))
+        {
+            pre = parties[0].charAt(0).toUpperCase() + parties[0].substring(1).toLowerCase() + "-" + parties[1].charAt(0).toUpperCase() + parties[1].substring(1).toLowerCase();
+            document.getElementById('prenom').value = pre;
 
-        document.getElementById('prenom').style.borderWidth = "3px";
-        document.getElementById('prenom').style.borderColor = "green";
-        document.getElementById('prenom').style.color = "green";
+            document.getElementById('prenom').style.borderWidth = "3px";
+            document.getElementById('prenom').style.borderColor = "green";
+            document.getElementById('prenom').style.color = "green";
 
-        document.getElementById("messageErr2").style.color = "green";
-        b.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
+            document.getElementById("messageErr2").style.color = "green";
+            b.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
 
-        prenomVerifie = 1; //variable globale
+            prenomVerifie = 1; //variable globale
+        }
+        else if (pre.includes(" "))
+        {
+            pre = partiesEspace[0].charAt(0).toUpperCase() + partiesEspace[0].substring(1).toLowerCase() + " " + partiesEspace[1].charAt(0).toUpperCase() + partiesEspace[1].substring(1).toLowerCase();
+            document.getElementById('prenom').value = pre;
+            document.getElementById('prenom').style.borderWidth = "3px";
+            document.getElementById('prenom').style.borderColor = "green";
+            document.getElementById('prenom').style.color = "green";
+
+            document.getElementById("messageErr2").style.color = "green";
+            b.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
+
+            prenomVerifie = 1; //variable globale
+        }
+        else
+        {
+            pre = pre.charAt(0).toUpperCase() + pre.substring(1).toLowerCase(); // *
+
+            document.getElementById('prenom').value = pre;
+
+            document.getElementById('prenom').style.borderWidth = "3px";
+            document.getElementById('prenom').style.borderColor = "green";
+            document.getElementById('prenom').style.color = "green";
+
+            document.getElementById("messageErr2").style.color = "green";
+            b.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
+
+            prenomVerifie = 1; //variable globale
+        }
     }
     else
     {
@@ -270,3 +304,4 @@ function fill()
         document.getElementById('civilite').value = "Monsieur";
     }
 }
+
