@@ -7,12 +7,6 @@ function txt() //Fonction de vérification de date en utilisant un regex
 
     if (nbtxt < 255) 
     {
-        document.getElementById('txt255').style.borderWidth = "3px";
-        document.getElementById('txt255').style.borderColor = "green";
-        document.getElementById('txt255').style.color = "green";
-
-        document.getElementById("messageErr6").style.color = "green";
-        d.innerHTML = "Le format est valide &nbsp; <i class='fas fa-check'></i>";
         document.getElementById('btn1').disabled = false;
     }
     else 
