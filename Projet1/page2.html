@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
 </head>
-<body>
+<body onload="fill()">
 
     <script src="js/page2.js"></script>
     <script src="js/cookies.js"></script>
@@ -39,7 +39,7 @@
       <p>Dans quel cadre avez vous effectuer votre location ?</p>
       <div class="form-group">
           <label for="cadre"></label>
-          <select class="form-control" id="cadre">
+          <select class="form-control" id="cadre" name="cadre">
             <option value="Professionnel">Professionnel</option>
             <option value="Tourisme">Tourisme</option>
             <option value="Autre">Autre</option>
@@ -52,7 +52,7 @@
         <p>Comment vous-êtes vous rendu à votre location ?</p>
         <div class="form-group">
             <label for="voyage"></label>
-            <select class="form-control" id="voyage">
+            <select class="form-control" id="voyage" name="voyage">
               <option value="Avion">Avion</option>
               <option value="Train">Train</option>
               <option value="Voiture">Voiture</option>
@@ -64,7 +64,7 @@
     <form style="width: 80%; margin-right: auto; margin-left: auto;"> 
       <p>Sur une échelle de 1 à 10 comment avez-vous trouvez la facilité d'accès à la location ?</p>
       <br>
-      <input type="range" name="accesInput" min="0" max="10" step="1" value="5" class="custom-range" id="acces" oninput="accesOutput.value = accesInput.value">
+      <input type="range" name="accesInput" min="0" max="10" step="1" value="5" class="custom-range" id="acces" name="acces" oninput="accesOutput.value = accesInput.value">
       <center><output name="accesOutput" id="accesOutput">5</output></center>  
     </form>
     

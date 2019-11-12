@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/mef.css">
 </head>
-<body>
+<body onload="fill()">
 
     <script src="https://kit.fontawesome.com/c0c75a99fb.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
@@ -32,7 +32,7 @@
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Nom</label>
-                <input type="text" class="form-control" onfocusout="normaliserNom()" id="nom" placeholder="Votre nom" value="">
+                <input type="text" class="form-control" onfocusout="normaliserNom()" id="nom" placeholder="Votre nom">
                 <small id="messageErr"></small>
             </div>
             <div id='print'></div>

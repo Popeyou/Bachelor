@@ -256,3 +256,17 @@ function verifBouton()
         document.location.href="page1.html";
     }
 }
+
+function fill()
+{
+    document.getElementById('nom').value = getCookieValue("nom");
+    document.getElementById('prenom').value = getCookieValue("prenom");
+    document.getElementById('dateNaiss').value = getCookieValue("dateNaiss");
+    document.getElementById('email').value = getCookieValue("email");
+    document.getElementById('civilite').value = getCookieValue("civilite");
+
+    if (getCookieValue("civilite") == "")
+    {
+        document.getElementById('civilite').value = "Monsieur";
+    }
+}

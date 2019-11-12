@@ -28,3 +28,6 @@ function deleteAllCookies()
     });
     document.location.href="index.html";
 }
+
+
+

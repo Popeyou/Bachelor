@@ -29,5 +29,14 @@ function txt() //Fonction de vérification de date en utilisant un regex
 
 function pageSuivante ()
 {
+    var commentaire = document.getElementById('txt255').value;
+
+    creerCookie("commentaire",commentaire,"15");
+
     document.location.href="fin.html";
+}
+
+function fill()
+{
+    document.getElementById('txt255').value = getCookieValue("commentaire");
 }

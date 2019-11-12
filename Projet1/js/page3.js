@@ -251,8 +251,23 @@ function verifBouton()
     }
     else if (dateVerifie == 1 || nbVerifie == 1 || urlVerifie == 1)
     {
+        var datea = document.getElementById("datea").value;
+        var nbj = document.getElementById("nbj").value;
+        var url = document.getElementById("url").value;
+
+        creerCookie("url",url,"15");
+        creerCookie("datea",datea,"15");
+        creerCookie("nbj",nbj,"15");
+
         document.location.href="page4.html";
     }
+}
+
+function fill()
+{
+    document.getElementById('datea').value = getCookieValue("datea");
+    document.getElementById('nbj').value = getCookieValue("nbj");
+    document.getElementById('url').value = getCookieValue("url");
 }
 
 
